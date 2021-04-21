@@ -1,7 +1,7 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
-  return () {
+  render () {
     return (
       <html>
         <Head>

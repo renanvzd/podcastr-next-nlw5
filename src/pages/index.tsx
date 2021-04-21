@@ -1,6 +1,3 @@
-import { useEffect } from "react"
-import { Header } from "../components/Header"
-
 export default function Home(props) {
 
   return (
@@ -12,7 +9,7 @@ export default function Home(props) {
 }
   
   export async function getStaticProps() {
-    const response = await fetch('http://locahost:3333/episodes')
+    const response = await fetch('http://localhost:3333/episodes')
     const data = await response.json()
     
  return {
