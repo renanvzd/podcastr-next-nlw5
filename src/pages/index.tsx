@@ -64,9 +64,13 @@ export const getStaticProps: GetStaticProps = async () => {
       };
     })
 
+    const latestEpisodes = episodes.slice(0, 2);
+    const allEpisodes = episodes.slice(2, episodes.lenght);
+
     return {
           props: {
-            episodes
+            latestEpisodes,
+            allEpisodes,
           },
           revalidate: 60 * 60 * 8,
         }
