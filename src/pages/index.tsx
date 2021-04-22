@@ -16,7 +16,6 @@ type Episode = {
   publishedAt: string,
   duration: number,
   durationAsString: string,
-  description: string,
   url: string,
 }
 
@@ -129,9 +128,8 @@ export const getStaticProps: GetStaticProps = async () => {
         thumbnail: episode.thumbnail,
         members: episode.members,
         publishedAt: format(parseISO(episode.published_at), 'd MMM yyy', { locale: ptBR}),
-        duration: episode.file.duration,
+        duration: Number(episode.file.duration),
         durationAsString: convertDurationToTimeString(Number(episode.file.duration)),
-        description: episode.description,
         url: episode.file.url,
       };
     })
