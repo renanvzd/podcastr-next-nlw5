@@ -24,6 +24,7 @@ export function Player() {
     playPrevious,
     hasNext,
     hasPrevious,
+    clearPlayerState
   } =  usePlayer();
 
   useEffect(() => {
@@ -51,8 +52,15 @@ export function Player() {
     setProgress(amount);
   }
 
-  const episode = episodeList[currentEpisodeIndex]
+  function handleEpisodeEnded() {
+    if (hasNext) {
+      playNext()
+    } else {
+      clearPlayerState()
+    }
+  }
   
+  const episode = episodeList[currentEpisodeIndex]
   return (
 
       <div className={styles.playerContainer}>
@@ -105,6 +113,7 @@ export function Player() {
               ref={audioRef}            
               loop={isLooping}
               autoPlay
+              onEnded={handleEpisodeEnded}
               onPlay={() => setPlayingState(true)}
               onPause={() => setPlayingState(false)}
               onLoadedMetadata={setupProgressListener}
