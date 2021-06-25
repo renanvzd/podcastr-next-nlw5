@@ -6,7 +6,7 @@
 </h1>
 
 <p align="center">
-  <img alt="Podcastr" src=".public/Home.png" width="100%">
+  <img alt="Podcastr" src=".github/Home.png" width="100%">
 </p>
 
 <br>
